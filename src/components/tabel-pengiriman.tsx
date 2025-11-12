@@ -21,9 +21,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table" // Sesuaikan path import
-import { Button } from "@/components/ui/button" // Sesuaikan path import
-import { Input } from "@/components/ui/input" // Sesuaikan path import
+} from "@/components/ui/table.tsx" // Sesuaikan path import
+import { Button } from "@/components/ui/button.tsx" // Sesuaikan path import
+import { Input } from "@/components/ui/input.tsx" // Sesuaikan path import
 
 interface DataTableProps<TData, TValue> {
   columns: Array<ColumnDef<TData, TValue>>
@@ -96,7 +96,7 @@ export function TabelPengiriman<TData, TValue>({
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>S
+          <TableBody>
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow

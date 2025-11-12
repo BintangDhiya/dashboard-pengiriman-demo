@@ -3,10 +3,10 @@
 import { MoreHorizontal } from "lucide-react"
 import type { ColumnDef } from "@tanstack/react-table"
 
-import type { Shipment } from "@/lib/data"
-import { Badge } from "@/components/ui/badge" // Sesuaikan path import
-import { Button } from "@/components/ui/button" // Sesuaikan path import
-import { Checkbox } from "@/components/ui/checkbox" // Sesuaikan path import
+import type { Shipment } from "@/lib/data.ts"
+import { Badge } from "@/components/ui/badge.tsx" // Sesuaikan path import
+import { Button } from "@/components/ui/button.tsx" // Sesuaikan path import
+import { Checkbox } from "@/components/ui/checkbox.tsx" // Sesuaikan path import
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +14,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu" // Sesuaikan path import
+} from "@/components/ui/dropdown-menu.tsx" // Sesuaikan path import
 
 
 // Fungsi helper untuk varian badge
@@ -31,7 +31,7 @@ const getStatusBadge = (status: "BARU" | "DI JALAN" | "TERKIRIM") => {
   }
 }
 
-export const columns: Array<ColumnDef<Shipment>> = [
+export const pengirimanColumns: Array<ColumnDef<Shipment>> = [
   {
     id: "select",
     header: ({ table }) => (

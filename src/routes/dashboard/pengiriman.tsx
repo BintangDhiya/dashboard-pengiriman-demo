@@ -3,10 +3,10 @@ import type { z } from 'zod'
 
 // --- Impor Komponen & Data ---
 // Pastikan path ini benar. '~/...' biasanya alias untuk 'app/...' atau 'src/...'
-import type { shipmentSchema } from '@/lib/data';
-import { TabelPengiriman } from '@/components/tabel-pengiriman'
-import { pengirimanColumns } from '@/components/pengiriman-columns'
-import { dummyData } from '@/lib/data' // Impor data & skema
+import type { shipmentSchema } from '@/lib/data.ts';
+import { TabelPengiriman } from '@/components/tabel-pengiriman.tsx'
+import { pengirimanColumns } from '@/components/pengiriman-columns.tsx'
+import { dummyData } from '@/lib/data.ts' // Impor data & skema
 
 // Helper async palsu untuk simulasi pengambilan data
 const fetchShipments = async (): Promise<Array<z.infer<typeof shipmentSchema>>> => {
