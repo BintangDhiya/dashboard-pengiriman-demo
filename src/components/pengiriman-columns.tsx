@@ -4,7 +4,6 @@ import { MoreHorizontal } from "lucide-react"
 import type { ColumnDef } from "@tanstack/react-table"
 
 import type { Shipment } from "@/lib/data.ts"
-import { Badge } from "@/components/ui/badge.tsx" // Sesuaikan path import
 import { Button } from "@/components/ui/button.tsx" // Sesuaikan path import
 import { Checkbox } from "@/components/ui/checkbox.tsx" // Sesuaikan path import
 import {
@@ -17,19 +16,6 @@ import {
 } from "@/components/ui/dropdown-menu.tsx" // Sesuaikan path import
 
 
-// Fungsi helper untuk varian badge
-const getStatusBadge = (status: "BARU" | "DI JALAN" | "TERKIRIM") => {
-  switch (status) {
-    case "TERKIRIM":
-      return <Badge variant="default" className="bg-green-600">TERKIRIM</Badge>
-    case "DI JALAN":
-      return <Badge variant="secondary">DI JALAN</Badge>
-    case "BARU":
-      return <Badge variant="outline" className="border-red-500 text-red-500">BARU</Badge>
-    default:
-      return <Badge variant="outline">UNKNOWN</Badge>
-  }
-}
 
 export const pengirimanColumns: Array<ColumnDef<Shipment>> = [
   {
@@ -55,12 +41,12 @@ export const pengirimanColumns: Array<ColumnDef<Shipment>> = [
     enableHiding: false,
   },
   {
-    accessorKey: "resi",
-    header: "No. Resi",
+    accessorKey: "id",
+    header: "Code",
   },
   {
-    accessorKey: "customer",
-    header: "Customer",
+    accessorKey: "resi",
+    header: "Resi",
   },
   {
     accessorKey: "barang",
@@ -68,12 +54,31 @@ export const pengirimanColumns: Array<ColumnDef<Shipment>> = [
   },
   {
     accessorKey: "tanggalKirim",
-    header: "Tgl. Kirim",
+    header: "Tgl. Pengambilan",
   },
   {
-    accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => getStatusBadge(row.getValue("status")),
+    accessorKey: "alamatPelanggan",
+    header: "Alamat Pelanggan",
+  },
+  {
+    accessorKey: "namaPTCV",
+    header: "Nama PT/CV",
+  },
+  {
+    accessorKey: "alamatPTCV",
+    header: "Alamat PT/CV",
+  },
+  {
+    accessorKey: "alamatTujuan",
+    header: "Alamat Tujuan",
+  },
+  {
+    accessorKey: "pic",
+    header: "PIC",
+  },
+  {
+    accessorKey: "berat",
+    header: "Berat (KG)",
   },
   {
     id: "actions",
