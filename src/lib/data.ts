@@ -55,3 +55,9 @@ export const dummyData: Array<Shipment> = [
         berat: 5
     },
 ]
+
+export const ptCvList = [
+    "PT. Maju Jaya",
+    "CV. Abadi Sentosa",
+    "PT. Bina Pertiwi",
+] as const // 'as const' membuatnya read-only (good practice)

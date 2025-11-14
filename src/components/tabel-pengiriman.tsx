@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/table.tsx" // Sesuaikan path import
 import { Button } from "@/components/ui/button.tsx" // Sesuaikan path import
 import { Input } from "@/components/ui/input.tsx" // Sesuaikan path import
+import { FormTambahPengiriman } from "@/components/form-tambah-pengiriman.tsx"
 
 interface DataTableProps<TData, TValue> {
   columns: Array<ColumnDef<TData, TValue>>
@@ -72,7 +73,7 @@ export function TabelPengiriman<TData, TValue>({
           }
           className="max-w-sm"
         />
-        <Button>Tambah Pengiriman Baru</Button>
+        <FormTambahPengiriman />
       </div>
 
       {/* Bagian Tabel */}
